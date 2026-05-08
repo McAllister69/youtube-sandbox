@@ -155,6 +155,7 @@ jobs:
           BRANCH="${GITHUB_REF_NAME}"
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git config --global http.postBuffer 524288000
           git add downloads/
           git commit -m "Add downloaded files from commit [skip ci]" || echo "Nothing to commit"
           echo "🚀 Pushing to branch: $BRANCH"
